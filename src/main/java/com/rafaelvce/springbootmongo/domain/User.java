@@ -2,9 +2,15 @@ package com.rafaelvce.springbootmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+//collection é opcional e, caso não seja declarado, será considerado o nome da classe em letras minusculas
+@Document(collection = "user")
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private String id;
 	private String name;
 	private String email;
